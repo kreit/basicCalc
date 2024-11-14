@@ -1,0 +1,12 @@
+#calcBody {
+    background-color: lightblue;
+    height: 275px;
+    width: 200px;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
