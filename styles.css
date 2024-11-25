@@ -1,12 +1,132 @@
-#calcBody {
-    background-color: lightblue;
-    height: 275px;
-    width: 200px;
-    border-radius: 25px;
-    justify-content: center;
-}
-
-body{
+body {
+    height: 100vh;
+    margin: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: #2e3b4e;
+    transition: 0.3s;
 }
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+}
+
+.toggle-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 30px;
+    background: #83a7c9;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.toggle-label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#calcBody {
+    background-color: #e8f4f5;
+    width: 300px;
+    border-radius: 25px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+#screen {
+    background-color: #2e3b4e;
+    height: 60px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 2rem;        
+    color: whitesmoke;              
+    text-align: right;      
+    overflow: hidden;    
+    display: flex;          
+    align-items: center;   
+    
+    
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    aspect-ratio: 1.2;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.operator {
+    background-color: #4a6783;
+}
+
+.operator:hover {
+    background-color: #5a7793;
+}
+
+.number, .clear {
+    background-color: #a8c5db;
+}
+
+.equals {
+    background-color: #ff7f6e;
+    grid-column: 4;
+    grid-row: 2 / span 4;
+    aspect-ratio: auto;
+}
+
+.theme-toggle:checked ~ * {
+    transition: 0.3s;
+}
+
+.theme-toggle:checked + .toggle-label {
+    background: #4a6783;
+}
+
+.theme-toggle:checked + .toggle-label:after {
+    left: calc(100% - 25px);
+}
+
+.toggle-label:hover {
+    background: #7298bc;
+}
+
+.theme-toggle:checked ~ #calcBody {
+    background-color: #1a1a1a;
+}
+
+.theme-toggle:checked ~ #calcBody #screen {
+    background-color: #333;
+}
+
+.theme-toggle:checked ~ #calcBody .number,
+.theme-toggle:checked ~ #calcBody .clear {
+    background-color: #404040;
+}
+
+.theme-toggle:checked ~ #calcBody .operator {
+    background-color: #666;
+}
+
